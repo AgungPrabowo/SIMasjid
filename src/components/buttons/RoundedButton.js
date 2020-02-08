@@ -30,9 +30,10 @@ const styles = StyleSheet.create({
     borderRadius: 40,
     borderWidth: 1,
     borderColor: colors.white,
+    marginBottom: 15,
+    alignItems: 'center',
   },
   buttonText: {
-    color: colors.green01,
     fontSize: 16,
     width: '100%',
     textAlign: 'center',
