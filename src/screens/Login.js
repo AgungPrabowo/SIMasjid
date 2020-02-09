@@ -13,7 +13,7 @@ import NextArrowButton from '../components/buttons/NextArrowButton';
 export default class Login extends Component {
   render() {
     return (
-      <KeyboardAvoidingView style={styles.wrapper} behavior="padding">
+      <KeyboardAvoidingView style={styles.wrapper}>
         <View style={styles.scrollViewWrapper}>
           <ScrollView style={styles.avoidView}>
             <Text style={styles.loginHeader}>Login</Text>
