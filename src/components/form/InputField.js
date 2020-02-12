@@ -30,6 +30,7 @@ class InputField extends Component {
       borderBottomColor,
       inputType,
       customStyle,
+      onChangeText,
     } = this.props;
     const {secureInput} = this.state;
     const color = labelColor || colors.white;
@@ -50,6 +51,7 @@ class InputField extends Component {
           </TouchableOpacity>
         ) : null}
         <TextInput
+          onChangeText={onChangeText}
           autoCorrect={false}
           style={[
             {color: inputColor, borderBottomColor: borderBottom},

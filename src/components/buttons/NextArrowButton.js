@@ -6,9 +6,12 @@ import colors from '../../styles/color';
 
 export default class NextArrowButton extends Component {
   render() {
+    const {handleNextButton} = this.props;
     return (
       <View style={styles.buttonWrapper}>
-        <TouchableHighlight style={[{opcaity: 0.6}, styles.button]}>
+        <TouchableHighlight
+          onPress={handleNextButton}
+          style={[{opcaity: 0.6}, styles.button]}>
           <Icon
             name="angle-right"
             color={colors.green01}

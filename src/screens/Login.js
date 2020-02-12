@@ -9,9 +9,26 @@ import {
 import colors from '../styles/color';
 import InputField from '../components/form/InputField';
 import NextArrowButton from '../components/buttons/NextArrowButton';
+import {apiLogin} from '../api/login';
 
 export default class Login extends Component {
+  handleEmailChange = email => {
+    // parent class change handler is always called with field name and value
+    this.setState({email: email});
+  };
+  handlePasswordChange = password => {
+    // parent class change handler is always called with field name and value
+    this.setState({password: password});
+  };
+
+  state = {
+    email: '',
+    password: '',
+  };
+
   render() {
+    const {email, password} = this.state;
+
     return (
       <KeyboardAvoidingView style={styles.wrapper}>
         <View style={styles.scrollViewWrapper}>
@@ -25,6 +42,7 @@ export default class Login extends Component {
               borderBottomColor={colors.white}
               inputType="email"
               customStyle={{marginBottom: 30}}
+              onChangeText={this.handleEmailChange}
             />
             <InputField
               labelText="PASSWORD"
@@ -34,9 +52,16 @@ export default class Login extends Component {
               borderBottomColor={colors.white}
               inputType="password"
               customStyle={{marginBottom: 30}}
+              onChangeText={this.handlePasswordChange}
             />
           </ScrollView>
-          <NextArrowButton />
+          <NextArrowButton
+            handleNextButton={apiLogin.bind(
+              this,
+              this.state.email,
+              this.state.password,
+            )}
+          />
         </View>
       </KeyboardAvoidingView>
     );

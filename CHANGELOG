@@ -2,6 +2,10 @@
 
 All notable changes to this project will be documented in this file.
 
+## v0.0.3
+- install Axios, react-native-dotenv
+- Create login example on API SISTesi
+
 ## v0.0.2
 - create button page login facebook
 - create button Create Account and terms of service
